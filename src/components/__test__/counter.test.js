@@ -5,12 +5,17 @@ import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 
 test("header renders with correct text ", () => {
- render(<Counter />);
- expect(screen.getByTestId('titleId')).toHaveTextContent("Counter")
+ const { getByTestId }= render(<Counter />);
+ const titleEl = screen.getByTestId("titleId")
+
+ expect(titleEl).toHaveTextContent("Counter")
   
 })
 
 test("counter initally start with text 0", () => {
-  render(<Counter />);
-  expect(screen.getByTestId('counterId')).toHaveTextContent(0)
+  const { getByTestId } = render(<Counter />);
+  const counterEl = screen.getByTestId('counterId')
+
+  expect(counterEl).toHaveTextContent(0)
 })
+

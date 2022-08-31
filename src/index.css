@@ -19,14 +19,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-/* 
-.counter {
-  display: flex;
-  align-items: flex-end;
-  display: flex;
-  justify-content: flex-end;
-  color: blue;
-} */
 
 .counter--count {
   background-color: white;
