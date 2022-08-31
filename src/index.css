@@ -2,12 +2,6 @@
   box-sizing: border-box;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  color: black;
-}
-
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -18,6 +12,37 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+.counter {
+  display: flex;
+  align-items: flex-end;
+}
+
+.counter > button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #737373;
+  color: #D9D9D9;
+  font-size: 1.5rem;
+}
+
+.counter > button:hover {
+  background-color: #404040;
+  color: #D9D9D9;
+}
+
+.counter > button:focus {
+  outline: none;
 }
 
 .counter--count {
@@ -35,13 +60,7 @@ body {
   margin-left: -20px;
 }
 
-.counter > button {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  background-color: #737373;
-  color: #D9D9D9;
-  font-size: 1.5rem;
+.counter--minus {
+  margin-right: -20px;
+  z-index: 1;
 }
