@@ -6,11 +6,11 @@ import "@testing-library/jest-dom/extend-expect"
 
 test("header renders with correct text ", () => {
  render(<Counter />);
- expect(screen.getByTestId('header')).toHaveTextContent("My Counter")
+ expect(screen.getByTestId('titleId')).toHaveTextContent("Counter")
   
 })
 
 test("counter initally start with text 0", () => {
   render(<Counter />);
-  expect(screen.getByTestId('counter')).toHaveTextContent(0)
+  expect(screen.getByTestId('counterId')).toHaveTextContent(0)
 })
