@@ -9,3 +9,8 @@ test("header renders with correct text ", () => {
  expect(screen.getByTestId('header')).toHaveTextContent("My Counter")
   
 })
+
+test("counter initally start with text 0", () => {
+  render(<Counter />);
+  expect(screen.getByTestId('counter')).toHaveTextContent(0)
+})
