@@ -24,3 +24,10 @@ test("add button renders with + sign", () => {
 
   expect(addBtn.textContent).toBe("+")
 })
+
+test("minus button renders with - sign", () => {
+  const { getByTestId } = render(<Counter />);
+  const minusBtn = screen.getByTestId("minus-btn")
+
+  expect(minusBtn.textContent).toBe("-")
+})

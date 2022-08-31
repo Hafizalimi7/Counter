@@ -12,6 +12,9 @@ function Counter() {
         <button data-testid="add-btn"className="counter--plus">
           +
         </button>
+        <button data-testid="minus-btn"className="counter--minus">
+          -
+        </button>
   </div>
    
   );
