@@ -81,3 +81,17 @@ test("clicking add button twice counter should be 2", () => {
 
   expect(counterEl.textContent).toBe("2")
 })
+
+test("clicking minus button twice counter should be -2", () => {
+  const { getByTestId } = render(<Counter />);
+  const minusBtn = screen.getByTestId("minus-btn")
+  const counterEl = screen.getByTestId("counterId")
+
+  fireEvent.click(minusBtn);
+
+  expect(counterEl.textContent).toBe("-1")
+
+  fireEvent.click(minusBtn);
+
+  expect(counterEl.textContent).toBe("-2")
+})
