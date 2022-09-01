@@ -8,7 +8,7 @@ test("counter initally start with text 0", () => {
   const { getByTestId } = render(<Counter />);
   const counterEl = screen.getByTestId('counterId')
 
-  expect(counterEl).toHaveTextContent(0)
+  expect(counterEl.textContent).toBe("0")
 })
 
 test("add button renders with + sign", () => {
@@ -36,4 +36,16 @@ test("clicks on add button to increment counter by 1", () => {
 
   expect(counterEl.textContent).toBe("1")
 
+})
+
+test("clicks on minus button to decrement by 1", () => {
+  const { getByTestId } = render(<Counter />);
+  const minusBtn = screen.getByTestId("minus-btn");
+  const counterEl = screen.getByTestId("counterId")
+
+  expect(counterEl.textContent).toBe("0")
+
+  fireEvent.click(minusBtn)
+
+  expect(counterEl.textContent).toBe("-1")
 })

@@ -9,13 +9,19 @@ function Counter() {
         return prevCount + 1
       })
     }
+
+    function minus(){
+      setCount(function(prevCount){
+        return prevCount -1
+      })
+    }
   
   return (
 
     
     
    <div className="counter" >
-        <button data-testid="minus-btn"className="counter--minus">-</button>
+        <button data-testid="minus-btn"className="counter--minus" onClick={minus}>-</button>
         <div className="counter--count">
           <h1 data-testid="counterId">{count}</h1>
         </div>
