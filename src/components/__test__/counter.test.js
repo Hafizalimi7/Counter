@@ -1,6 +1,6 @@
 import React from "react"
 import Counter from "../counter"
-import { render, screen } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 
 
@@ -23,4 +23,17 @@ test("minus button renders with - sign", () => {
   const minusBtn = screen.getByTestId("minus-btn")
 
   expect(minusBtn.textContent).toBe("-")
+})
+
+test("clicks on add button to increment counter by 1", () => {
+  const { getByTestId } = render(<Counter />);
+  const addBtn = screen.getByTestId("add-btn")
+  const counterEl = screen.getByTestId('counterId')
+
+  expect(counterEl.textContent).toBe("0")
+
+  fireEvent.click(addBtn);
+
+  expect(counterEl.textContent).toBe("1")
+
 })
