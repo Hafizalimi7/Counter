@@ -96,10 +96,22 @@ test("clicking minus button twice counter should be -2", () => {
   expect(counterEl.textContent).toBe("-2")
 })
 
-test("if counter is => 0 it should appear in black", () => {
+test("if counter is === 0 it should appear in black", () => {
   const { getByTestId } = render(<Counter />);
   const minusBtn = screen.getByTestId("minus-btn")
   const counterEl = screen.getByTestId("counterId")
 
-  expect(counterEl.className).toBe("")
+  expect(counterEl.className).toBe("black")
+})
+
+test("if counter is bellow 0 it should appear in red", () => {
+  const { getByTestId } = render(<Counter />);
+  const minusBtn = screen.getByTestId("minus-btn")
+  const counterEl = screen.getByTestId("counterId")
+  
+  expect(counterEl.className).toBe("black")
+
+  fireEvent.click(minusBtn)
+
+  expect(counterEl.className).toBe("red")
 })

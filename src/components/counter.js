@@ -23,7 +23,7 @@ function Counter() {
    <div className="counter" >
         <button data-testid="minus-btn"className="counter--minus" onClick={minus}>-</button>
         <div className="counter--count">
-          <h1 data-testid="counterId">{count}</h1>
+          <h1 className={`${count < 0 ? "red":"black"}`} data-testid="counterId">{count}</h1>
         </div>
         <button data-testid="add-btn"className="counter--plus"  onClick={add}>+</button>
         
