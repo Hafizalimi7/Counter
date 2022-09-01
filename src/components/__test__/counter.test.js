@@ -50,7 +50,7 @@ test("clicks on minus button to decrement by 1", () => {
   expect(counterEl.textContent).toBe("-1")
 })
 
-test("adding and then subtracting leads to the correct number on counter", () => {
+test("adding and then subtracting leads to the correct number on counterCan", () => {
   const { getByTestId } = render(<Counter />);
   const addBtn = screen.getByTestId("add-btn")
   const minusBtn = screen.getByTestId("minus-btn");
@@ -68,4 +68,16 @@ test("adding and then subtracting leads to the correct number on counter", () =>
 
 })
 
+test("clicking add button twice counter should be 2", () => {
+  const { getByTestId } = render(<Counter />);
+  const addBtn = screen.getByTestId("add-btn")
+  const counterEl = screen.getByTestId("counterId")
 
+  fireEvent.click(addBtn);
+
+  expect(counterEl.textContent).toBe("1")
+
+  fireEvent.click(addBtn);
+
+  expect(counterEl.textContent).toBe("2")
+})
