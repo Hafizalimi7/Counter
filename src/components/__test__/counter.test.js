@@ -49,3 +49,23 @@ test("clicks on minus button to decrement by 1", () => {
 
   expect(counterEl.textContent).toBe("-1")
 })
+
+test("adding and then subtracting leads to the correct number on counter", () => {
+  const { getByTestId } = render(<Counter />);
+  const addBtn = screen.getByTestId("add-btn")
+  const minusBtn = screen.getByTestId("minus-btn");
+  const counterEl = screen.getByTestId("counterId")
+
+  expect(counterEl.textContent).toBe("0")
+
+  fireEvent.click(addBtn);
+
+  expect(counterEl.textContent).toBe("1")
+
+  fireEvent.click(minusBtn);
+  
+  expect(counterEl.textContent).toBe("0")
+
+})
+
+
