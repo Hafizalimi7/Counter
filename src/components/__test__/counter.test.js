@@ -115,3 +115,15 @@ test("if counter is bellow 0 it should appear in red", () => {
 
   expect(counterEl.className).toBe("red")
 })
+
+test("if counter is above 0 it should appear in green", () => {
+  const { getByTestId } = render(<Counter />);
+  const addBtn = screen.getByTestId("add-btn")
+  const counterEl = screen.getByTestId("counterId")
+  
+  expect(counterEl.className).toBe("black")
+
+  fireEvent.click(addBtn)
+
+  expect(counterEl.className).toBe("green")
+})
